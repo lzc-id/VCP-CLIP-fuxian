@@ -1,0 +1,16 @@
+/data/miniconda/envs/torch/lib/python3.10/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+Traceback (most recent call last):
+  File "/data/coding/VCP-CLIP-main/test.py", line 368, in <module>
+    test(args)
+  File "/data/coding/VCP-CLIP-main/test.py", line 62, in test
+    model , preprocess_train , preprocess_test = Load_CLIP(img_size, args.pretrained_path , device=device, deep_prompt_len = args.deep_prompt_len, total_d_layer_len = args.total_d_layer_len)
+  File "/data/coding/VCP-CLIP-main/models/model_CLIP.py", line 343, in Load_CLIP
+    model.float()
+  File "/data/miniconda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 821, in float
+    return self._apply(lambda t: t.float() if t.is_floating_point() else t)
+  File "/data/miniconda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 662, in _apply
+    param_applied = fn(param)
+  File "/data/miniconda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 821, in <lambda>
+    return self._apply(lambda t: t.float() if t.is_floating_point() else t)
+KeyboardInterrupt

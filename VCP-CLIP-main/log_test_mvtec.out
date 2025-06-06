@@ -1,0 +1,87 @@
+/data/miniconda/envs/torch/lib/python3.10/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+25-05-22 16:02:20.977 - INFO: data_path: ./dataset/mvisa/data
+25-05-22 16:02:20.977 - INFO: save_path: ./results/test_mvtec
+25-05-22 16:02:20.977 - INFO: checkpoint_path: ./vcp_weight/train_visa.pth
+25-05-22 16:02:20.977 - INFO: config_path: ./models/model_configs/ViT-L-14-336.json
+25-05-22 16:02:20.977 - INFO: pretrained_path: ./pretrained_weight/ViT-L-14-336px.pt
+25-05-22 16:02:20.977 - INFO: dataset: mvtec
+25-05-22 16:02:20.977 - INFO: model: ViT-L-14-336
+25-05-22 16:02:20.977 - INFO: pretrained: openai
+25-05-22 16:02:20.978 - INFO: features_list: [6, 12, 18, 24]
+25-05-22 16:02:20.978 - INFO: image_size: 518
+25-05-22 16:02:20.978 - INFO: seed: 333
+25-05-22 16:02:20.978 - INFO: prompt_len: 2
+25-05-22 16:02:20.978 - INFO: deep_prompt_len: 1
+25-05-22 16:02:20.978 - INFO: device_id: 0
+25-05-22 16:02:20.978 - INFO: use_global: True
+25-05-22 16:02:20.978 - INFO: total_d_layer_len: 11
+  0%|          | 0/54 [00:00<?, ?it/s]  0%|          | 0/54 [00:07<?, ?it/s]
+Traceback (most recent call last):
+  File "/data/coding/VCP-CLIP-main/test.py", line 368, in <module>
+    test(args)
+  File "/data/coding/VCP-CLIP-main/test.py", line 155, in test
+    image_features, patch_tokens = model.encode_image(image, features_list)
+  File "/data/coding/VCP-CLIP-main/models/model_CLIP.py", line 134, in encode_image
+    return self.visual(image, out_layers)
+  File "/data/miniconda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/data/coding/VCP-CLIP-main/models/transformer.py", line 593, in forward
+    x, attn, patch_tokens = self.transformer(x, out_layers)
+  File "/data/miniconda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/data/coding/VCP-CLIP-main/models/transformer.py", line 548, in forward
+    x, attn_tmp = r(x)
+  File "/data/miniconda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/data/coding/VCP-CLIP-main/models/transf 44%|████▍     | 24/54 [01:34<02:32,  5.07s/it] 46%|████▋     | 25/54 [01:37<02:11,  4.55s/it] 48%|████▊     | 26/54 [01:40<01:52,  4.01s/it] 50%|█████     | 27/54 [01:43<01:42,  3.81s/it] 52%|█████▏    | 28/54 [01:46<01:34,  3.62s/it] 54%|█████▎    | 29/54 [01:50<01:27,  3.52s/it] 56%|█████▌    | 30/54 [01:53<01:22,  3.43s/it] 57%|█████▋    | 31/54 [01:56<01:18,  3.41s/it] 59%|█████▉    | 32/54 [02:00<01:13,  3.35s/it] 61%|██████    | 33/54 [02:03<01:09,  3.32s/it] 63%|██████▎   | 34/54 [02:06<01:06,  3.31s/it] 65%|██████▍   | 35/54 [02:09<01:03,  3.32s/it] 67%|██████▋   | 36/54 [02:13<00:59,  3.29s/it] 69%|██████▊   | 37/54 [02:16<00:56,  3.34s/it] 70%|███████   | 38/54 [02:20<00:53,  3.37s/it] 72%|███████▏  | 39/54 [02:23<00:50,  3.39s/it] 74%|███████▍  | 40/54 [02:26<00:46,  3.36s/it] 76%|███████▌  | 41/54 [02:30<00:43,  3.38s/it] 78%|███████▊  | 42/54 [02:33<00:40,  3.34s/it] 80%|███████▉  | 43/54 [02:36<00:37,  3.36s/it] 81%|████████▏ | 44/54 [02:40<00:34,  3.40s/it] 83%|████████▎ | 45/54 [02:43<00:30,  3.43s/it] 85%|████████▌ | 46/54 [02:47<00:27,  3.46s/it] 87%|████████▋ | 47/54 [02:50<00:24,  3.46s/it] 89%|████████▉ | 48/54 [02:54<00:20,  3.47s/it] 91%|█████████ | 49/54 [02:57<00:17,  3.49s/it] 93%|█████████▎| 50/54 [03:01<00:14,  3.51s/it] 94%|█████████▍| 51/54 [03:04<00:10,  3.50s/it] 96%|█████████▋| 52/54 [03:08<00:06,  3.47s/it] 98%|█████████▊| 53/54 [03:11<00:03,  3.47s/it]100%|██████████| 54/54 [03:14<00:00,  3.36s/it]100%|██████████| 54/54 [03:14<00:00,  3.61s/it]
+bottle--->  iou:0.46238154208440696   f1-max:0.6323684412092045  threshold:0.3985937833786011
+visualization bottle
+cable--->  iou:0.15527169550829548   f1-max:0.26880707999564984  threshold:0.7391981482505798
+visualization cable
+capsule--->  iou:0.23622415368595534   f1-max:0.3821729459435108  threshold:0.4668456017971039
+visualization capsule
+carpet--->  iou:0.6141409751052892   f1-max:0.760953147979234  threshold:0.414544016122818
+visualization carpet
+grid--->  iou:0.2810130677108255   f1-max:0.43873977911311735  threshold:0.45038267970085144
+visualization grid
+hazelnut--->  iou:0.3724845915197139   f1-max:0.542789894711383  threshold:0.7021840810775757
+visualization hazelnut
+leather--->  iou:0.41326727451878376   f1-max:0.5848422905713307  threshold:0.5570381879806519
+visualization leather
+metal_nut--->  iou:0.22331333603401515   f1-max:0.36509591666038893  threshold:0.2958761751651764
+visualization metal_nut
+pill--->  iou:0.2001599776049298   f1-max:0.3335559881446809  threshold:0.5280869603157043
+visualization pill
+screw--->  iou:0.29209662596822894   f1-max:0.45213600467060594  threshold:0.7298222780227661
+visualization screw
+tile--->  iou:0.5748429064111142   f1-max:0.7300323533594583  threshold:0.32008734345436096
+visualization tile
+toothbrush--->  iou:0.2019648827942784   f1-max:0.3360608093359727  threshold:0.774489164352417
+visualization toothbrush
+transistor--->  iou:0.11070779634261008   f1-max:0.19934681568580165  threshold:0.34465909004211426
+visualization transistor
+wood--->  iou:0.5120118716656563   f1-max:0.6772609954786944  threshold:0.42041245102882385
+visualization wood
+zipper--->  iou:0.5232246283774145   f1-max:0.6869967832269366  threshold:0.28104299306869507
+visualization zipper
+25-05-22 16:35:59.553 - INFO: 
+| objects    |   auroc_px |   aupro_px |   ap_px |   f1_px |   iou |   auroc_sp |   aupro_sp |   ap_sp |   f1_sp |   threshold |
+|:-----------|-----------:|-----------:|--------:|--------:|------:|-----------:|-----------:|--------:|--------:|------------:|
+| bottle     |      94.01 |      87.89 |   66.89 |   63.24 | 46.24 |      97.06 |          0 |   99.12 |   94.66 |       0.399 |
+| cable      |      79.52 |      67.98 |   20.82 |   26.88 | 15.53 |      71.5  |          0 |   83.62 |   76.15 |       0.739 |
+| capsule    |      96.65 |      94.02 |   34.21 |   38.22 | 23.62 |      88.27 |          0 |   97.55 |   92.17 |       0.467 |
+| carpet     |      99.49 |      98.25 |   83.18 |   76.1  | 61.41 |      99.96 |          0 |   99.99 |   99.44 |       0.415 |
+| grid       |      97.43 |      90.23 |   42.17 |   43.87 | 28.1  |      99.67 |          0 |   99.88 |   98.28 |       0.45  |
+| hazelnut   |      97.71 |      88.56 |   59.4  |   54.28 | 37.25 |      94.5  |          0 |   97.44 |   91.3  |       0.702 |
+| leather    |      99.62 |      99.11 |   62.2  |   58.48 | 41.33 |     100    |          0 |  100    |  100    |       0.557 |
+| metal_nut  |      75.8  |      76.51 |   27.14 |   36.51 | 22.33 |      68.87 |          0 |   92.53 |   89.42 |       0.296 |
+| pill       |      89.78 |      94.55 |   31.89 |   33.36 | 20.02 |      77.77 |          0 |   94.97 |   91.56 |       0.528 |
+| screw      |      98.69 |      93.53 |   42.51 |   45.21 | 29.21 |      87.44 |          0 |   95.26 |   89.06 |       0.73  |
+| tile       |      94.23 |      91.06 |   77.08 |   73    | 57.48 |      97.98 |          0 |   99.28 |   96.47 |       0.32  |
+| toothbrush |      93.85 |      86.84 |   30.85 |   33.61 | 20.2  |      87.22 |          0 |   94.99 |   89.55 |       0.774 |
+| transistor |      69.36 |      56.33 |   14.15 |   19.93 | 11.07 |      80.29 |          0 |   79.31 |   73.81 |       0.345 |
+| wood       |      97.61 |      95.78 |   74.15 |   67.73 | 51.2  |      96.75 |          0 |   98.97 |   95.16 |       0.42  |
+| zipper     |      97.77 |      91.46 |   69.58 |   68.7  | 52.32 |      99.76 |          0 |   99.94 |   99.58 |       0.281 |
+| mean       |      92.1  |      87.47 |   49.08 |   49.27 | 34.49 |      89.8  |          0 |   95.52 |   91.77 |       0.495 |
+./vcp_weight/train_visa.pth
